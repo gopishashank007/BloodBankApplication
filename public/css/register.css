@@ -1,0 +1,47 @@
+
+.navbar-default {
+  background-color:red;
+  background-repeat: no-repeat;
+ }
+ .font-face {
+   font-family: 'Lobster';
+   font-style: normal;
+   font-weight: 400;
+
+ }
+ strong{
+     color:black;
+ }
+h1   {color: white;
+  margin: 15px 0px 5px 0px;
+    }
+
+label {
+    color: black;
+    font-weight: bold;
+    display: block;
+    float: left;
+}
+
+
+span
+{
+   color: red;
+}
+h2
+{color: white;
+  margin: 15px 0px 5px 0px;
+      border-bottom: 1px solid black;
+  }
+  h3
+  {
+    color: blue;
+      margin: 15px 0px 5px 0px;
+          border-bottom: 1px solid black;
+  }
+
+
+  .main {
+    overflow:auto;
+    padding-bottom:150px; /* this needs to be bigger than footer height*/
+  }

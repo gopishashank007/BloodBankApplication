@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Time for blood donation.</title>
+    <link href="jquery-3.2.1.min.js" type="text/javascript">
+    <link href="jquery.js" type="text/javascript">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dashboard.css" />
+
+
+    <title>Login-Donate_Blood</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<style>
+    body{
+        background: white;
+        padding-left: 40px;
+    }
+</style>
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container-fluid">
+                <div class="navbar-header ">
+                    <img align="left" src="../img/bloodbanklogo.jpg" alt="logo" style="width:50px;height:50px;" class="center-block img-circle">
+
+                    <a class="navbar-brand font-header" style="font-size:30px !important;" href="/dashboard">My Blood Bank</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right font-face ">
+                    <li><a href="/logout"><span class="glyphicon glyphicon-user "></span> Logout</a></li>
+
+                </ul>
+            </div>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                  <li>
+                      <a href="/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                  </li>
+                  <li>
+                      <a href="/appointments"><i class="fa fa fa-clock-o"></i> Get your appointment straight</a>
+                  </li>
+                  <li class="active">
+                      <a href="/donor_card"><i class="fa fa-fw fa-credit-card"></i> Get done with your donor card</a>
+                  </li>
+                  <li>
+                      <a href="/Requestor_form"><i class="fa fa-fw fa-star"></i> Request form</a>
+                  </li>
+                  <li>
+                      <a href="/Register"><i class="fa fa-fw fa-arrow-circle-o-down"></i> Register to donate blood</a>
+                  </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Donor Card
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="/dashboard">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> Donor Card
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-6 post-it">
+                      <div class="note">
+                      <form name="myform" id="myform"  onsubmit="return Validate()" action="/assigndonorcard" method="POST" >
+                        <form role="form">
+                            <div class="form-group includedContent">
+                                <label>Preferred  Name </label>
+                                <input class="form-control" type="text" id="preferredname" name="preferredname" placeholder="Preferred  Name on the card" onkeypress="return onlyAlphabets(event,this);" required>
+                              <label>Dob </label>
+                              <input class="form-control glyphicon glyphicon-calendar"type="date" id="date" name="date" placeholder="Dob on the card" min="1933-01-01" max="1998-12-31"required>
+                              <div class=spacer>
+                            <input type="submit" class="btn btn-success"></input>
+                            <p><span id='display'></span></p>
+                              </div>
+                            </div>
+                        </form>
+                      </form>
+                    </div></div>
+                </div>
+
+
+
+
+
+<script language="Javascript" type="text/javascript">
+function Validate(){
+if ($("#preferredname").val().trim().length > 0){
+return true;
+}
+alert("Please enter a valid name.");
+$("#preferredname").focus();
+return false;
+}
+function onlyAlphabets(e, t) {
+          try {
+              if (window.event) {
+                  var charCode = window.event.keyCode;
+              }
+              else if (e) {
+                  var charCode = e.which;
+              }
+              else { return true; }
+              if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)||(charCode== 32) ||(charCode== 8))
+                  return true;
+              else
+                  return false;
+          }
+          catch (err) {
+
+          }
+      }
+
+</script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<footer class="footer text-center">Developed by Shashank © 2017. All Rights Reversed  </footer>

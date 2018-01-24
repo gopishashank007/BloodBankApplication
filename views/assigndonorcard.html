@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Time for blood donation.</title>
+    <link href="jquery-3.2.1.min.js" type="text/javascript"></script>
+    <link href="jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+
+    <title>Assign-Donor-card</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../css/dashboard.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+<style>
+h2 span.spacer {
+   padding:0 5px;
+   color: white;
+}
+.image {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+span{
+  color: white;
+}
+h2 {
+   position: absolute;
+   top: 200px;
+   left: 100px;
+   width: 100%;
+   color: white;
+}
+</style>
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container-fluid">
+                <div class="navbar-header ">
+                    <img align="left" src="http://jankalyanbloodbanknagar.com/IMG/Blood%20bank%20logo%202.jpg" alt="logo" style="width:50px;height:50px;" class="center-block img-circle">
+
+                    <a class="navbar-brand font-header" style="font-size:30px !important;" href="/dashboard">Michigan Blood Bank</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right font-face ">
+                    <li><a href="/logout"><span class="glyphicon glyphicon-user "></span> Logout</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                  <li>
+                      <a href="/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                  </li>
+                  <li>
+                      <a href="/appointments"><i class="fa fa fa-clock-o"></i> Get your appointment straight</a>
+                  </li>
+                  <li class="active">
+                      <a href="/donor_card"><i class="fa fa-fw fa-credit-card"></i> Get done with your donor card</a>
+                  </li>
+                  <li>
+                      <a href="/Requestor_form"><i class="fa fa-fw fa-star"></i> Request form</a>
+                  </li>
+                  <li>
+                      <a href="/Register"><i class="fa fa-fw fa-arrow-circle-o-down"></i> Register to donate blood</a>
+                  </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Forms
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="/dashboard">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> Forms
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="image">
+
+                      <img src="./img/donorcard.jpg" alt="donorcard" />
+<h2><span> <%= preferredname %><span class='spacer'></span><br /><span class='spacer'></span><%= date %> </span></h2>
+
+                </div>
+                <p> <center></center>Your Donor card looks like this!!.</p>
+                <!-- /.row -->
+
+<!--  <div class="image">
+
+  <img src="https://cdn.invitations4u.com/media/type/image/nuclear_red_gradient_poppy_reds_template_blank_invitation-r042c6843c4b843f194e21a3fdf6dec39_zk91i_530.jpg" alt="donorcard" />
+  <canvas id="canvas" />
+
+</div>-->
+<script language="Javascript" type="text/javascript">
+$(function() {
+
+    $("h2")
+        .wrapInner("<span>")
+
+    $("h2 br")
+        .before("<span class='spacer'>")
+        .after("<span class='spacer'>");
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<meta charset="utf-8" xmlns="http://www.w3.org/1999/html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/login.css" />
+<link rel="stylesheet" type="text/css" href="../css/port.css" />
+<script src = "../scripts/login.js"> </script>
+<style>
+body{
+   padding-top:100px;
+}
+</style>
+<body>
+
+<nav class="navbar navbar-fixed-top navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header ">
+            <img align="left" src="../img/bloodbanklogo.jpg" alt="logo" style="width:50px;height:50px;" class="center-block img-circle">
+
+            <a class="navbar-brand font-header" href="/">My Blood Bank</a>
+        </div>
+        <div id="navigation">
+            <ul class="nav navbar-nav font-face ">
+                <li><a href="/vision">About </a></li>
+                <li><a href="/drives">Blood Drives</a></li>
+                <li><a href="/blood">About Blood</a></li>
+
+
+            </ul>
+        </div>
+        <ul class="nav navbar-nav navbar-right font-face ">
+            <li><a href="/login"><span class="glyphicon glyphicon-user "></span> Login</a></li>
+            <li><a href="/signup"><span class="glyphicon glyphicon-log-in"></span> Sign up</a></li>
+        </ul>
+    </div>
+</nav>
+
+          <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>Login to Your Account</h1><br>
+            <form id = "loginform" name = "loginform" action = "/submitLoginForm" method = "POST" class="form-signin" onsubmit="return check(this)" >
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" id="inputEmail" name = "inputEmail" class="form-control" placeholder="Username/email" required autofocus>
+                <input type="password" id="inputPassword" name = "inputPassword" class="form-control" placeholder="Password" required>
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+            </form><!-- /form -->
+
+                    <div class="login-help">Dont Have an account?
+                        <a href="/signup">Sign Up here</a>
+                      </div>
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+</div>
+</body>
+</html>

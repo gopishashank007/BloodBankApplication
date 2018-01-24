@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/port.css" />
+<script src = "../scripts/signup.js"> </script>
+<style>
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+.block {
+   background: rgba(0,0,0, .8);
+  color:white;
+  padding:50px;
+  width: 75%;
+  margin-right:auto;
+  margin-left:auto;
+  border-radius: 15px;
+ }
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.signupbtn {float:left;width:50%}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+}
+label, input {
+    display: block;
+}
+
+label {
+  margin-top: 5px;
+    margin-bottom: 5px;
+}
+body{
+  position: relative;
+  font-family: "Times New Roman";
+  background: no-repeat center center fixed;
+  background:#99e6ff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+h1{
+  margin-top: 100px;
+  text-align: center;
+}
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+</style>
+<body>
+
+  <nav class="navbar navbar-fixed-top navbar-default">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <img align="left" src="../img/bloodbanklogo.jpg" alt="logo" style="width:50px;height:50px;" class="center-block img-circle">
+
+              <a class="navbar-brand font-header" href="/">My Blood Bank</a>
+          </div>
+          <div id="navigation">
+              <ul class="nav navbar-nav font-face ">
+                  <li><a href="/vision">About </a></li>
+                  <li><a href="/drives">Blood Drives</a></li>
+                  <li><a href="/blood">About Blood</a></li>
+
+
+              </ul>
+          </div>
+          <ul class="nav navbar-nav navbar-right font-face ">
+              <li><a href="/login"><span class="glyphicon glyphicon-user "></span> Login</a></li>
+              <li><a href="/signup"><span class="glyphicon glyphicon-log-in"></span> Sign up</a></li>
+          </ul>
+      </div>
+  </nav>
+
+<!--<form id = "loginform" name = "loginform" action = "/submitLoginForm" method = "POST" class="form-signin" onsubmit="return check(this)" >-->
+<h1> Create your account</h1>
+  <form class="form-group" id="signupform" name="signupform" action = "/submitSignupForm" method = "POST" class="form-signin" onsubmit="return check(this)">
+    <div class="container modal-dialog loginmodal-container">
+        <div class="form-group">
+      <label><b>Firstname</b></label>
+      <input type="text" placeholder="Enter First name" name="firstname" action="">
+            <span id = "firstname_errormsg"></span>
+        </div>
+      <label><b>Lastname</b></label>
+     <input type="text" placeholder="Enter lastname" name="lastname">
+            <span id = "lastname_errormsg"></span>
+        <label><strong>Age</strong> </label>
+      <input type="number" min="18" max="70" name="age" placeholder="AGE">
+                  <span id = "age_errormsg"></span>
+
+     <label><b>Email as Userid</b></label>
+      <input type="text" placeholder="Enter userid" name="userid">
+                  <span id = "userid_errormsg"></span>
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw">
+                  <span id = "psw_errormsg"></span>
+      <label><b>Confirm Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="cpassword" id="cpassword">
+                        <span id = "cpassword_errormsg"></span>
+      <div class="form-group">
+       <button type="button" class="cancelbtn" onclick="location.href='/';">Cancel</button>
+        <button type="submit" class="signupbtn" name="submit">Sign Up </button>
+      </div>
+  </form>
+
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+body{
+
+    position: relative;
+    font-family: "Times New Roman";
+    background: no-repeat center center fixed;
+    background:#99e6ff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+html, body {
+    margin: 0;
+    height: 100%;
+}
+#wrapper{
+    min-height: 100%;
+    position:relative;
+    background: white;
+
+}
+.navbar-default {
+    background-color:red;
+    background-repeat: no-repeat;
+    line-height: 150px;
+    height: 75px;
+    padding-top: 10px;
+    padding-left: 30px;
+
+
+
+
+
+}
+span
+{
+    color: red;
+}
+#navigation ul
+{
+    margin: 0;
+    padding: 0  ;
+
+}
+
+#navigation ul li
+{
+    border-right: 2.5px groove #a6a6a6;
+    height: 50px;
+
+
+}
+
+
+.main {
+    overflow:auto;
+    padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+{
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+ul {
+    list-style-type: none;
+}
+.font-header {
+    font-family: 'Times New Roman',serif;
+    font-style: normal;
+    font-size: 1.875em;
+    letter-spacing:-1px;
+    text-transform: uppercase;
+
+    padding-right:15px;
+    padding-left:20px;
+    color: red !important;
+
+    font-weight: 900;
+}
+.font-face {
+    font-family: 'Times New Roman',serif;
+    font-style: normal;
+    font-size: 18px;
+
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}

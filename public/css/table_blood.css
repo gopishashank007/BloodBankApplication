@@ -1,0 +1,90 @@
+table.t2.t2 {
+
+    border-spacing: 1px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+
+    position: relative;
+}
+table.t2.t2 * {
+    position: relative;
+}
+table.t2.t2 td, table.t2 th {
+    padding-left: 8px;
+}
+table.t2.t2 thead tr {
+    height: 60px;
+    background: #ff704d;
+    font-size: 16px;
+}
+table.t2.t2 tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+}
+table.t2 tbody tr:last-child {
+    border: 0;
+}
+table.t2.t2 td, table.t2 th {
+    text-align: left;
+}
+table.t2 td.l, table.t2 th.l {
+    text-align: right;
+}
+table.t2 td.c, table.t2 th.c {
+    text-align: center;
+}
+table.t2 td.r, table.t2 th.r {
+    text-align: center;
+}
+
+@media screen and (max-width: 35.5em) {
+    table.t2 {
+        display: block;
+    }
+    table.t2 > *, table.t2 tr, table.t2 td, table.t2 th {
+        display: block;
+    }
+    table.t2 thead {
+        display: none;
+    }
+    table.t2 tbody tr {
+        height: auto;
+        padding: 8px 0;
+    }
+    table.t2 tbody tr td {
+        padding-left: 45%;
+        margin-bottom: 12px;
+    }
+    table.t2 tbody tr td:last-child {
+        margin-bottom: 0;
+    }
+    table.t2 tbody tr td:before {
+        position: absolute;
+        font-weight: 700;
+        width: 40%;
+        left: 10px;
+        top: 0;
+    }
+    table.t2 tbody tr td:nth-child(1):before {
+        content: "Code";
+    }
+    table.t2 tbody tr td:nth-child(2):before {
+        content: "Stock";
+    }
+    table.t2 tbody tr td:nth-child(3):before {
+        content: "Cap";
+    }
+    table.t2 tbody tr td:nth-child(4):before {
+        content: "Inch";
+    }
+    table.t2 tbody tr td:nth-child(5):before {
+        content: "Box Type";
+    }
+}
+
+
+
