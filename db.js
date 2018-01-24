@@ -8,4 +8,17 @@ user: process.env.RDS_USERNAME,
 port: process.env.RDS_PORT
 
 
-
+});
+console.log("pool");
+exports.executeQuery = function(sql, callback) {
+  // get a connection from the pool
+  pool.getConnection(function(err, connection) {
+    if(err) { console.error(err); callback(err,null); return; }
+    // make the query
+    connection.query(sql, function(err, results) {
+      connection.release();
+      if(err) { console.error(err); callback(err,null); return; }
+      callback(null, results);
+    });
+  });
+};
